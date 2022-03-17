@@ -1,0 +1,94 @@
+body{
+    font-family: "Montserrat", sans-serif;
+}
+
+main {
+    background: rgb(221,209,215);
+    background: radial-gradient(
+    circle, 
+    rgba(221,209,215,1) 0%, 
+    rgba(0,14,31,1) 100%);
+}
+
+div.my-carousel-container{
+    height: 600px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+div.my-carousel-images .main-img {
+    display: none;
+    height: 400px;
+}
+
+div.main-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.text-box {
+    bottom: 5%;
+    width: 80%;
+    right: 3rem;
+}
+
+div.my-carousel-images .main-img.active{
+    display: block;
+}
+
+div.my-thumbnails {
+    margin-top: 1.5rem;
+    border-radius: 20px;
+    min-height: 160px;
+    overflow: hidden;
+}
+
+div.my-thumbnails .img-wrapper {
+    filter: brightness(50%);
+    width: 100%;
+}
+
+div.my-thumbnails .img-wrapper.active {
+    filter: brightness(100%);
+    border: 2px solid white;
+}
+
+div.my-thumbnails .img-wrapper img {
+    object-fit: cover;
+}
+
+div.my-previous,
+div.my-next{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, .5);
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+div.my-previous{
+    left: 1rem;
+}
+
+div.my-next{
+    right: 1rem;
+}
+
+div.my-previous > span::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f7fb";
+    line-height: 30px;
+}
+
+div.my-next > span::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f520";
+    line-height: 30px;
+}
