@@ -36,11 +36,11 @@
                 <div class="col-12 p-5">
                     <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel">
                         <div class="my-carousel-images">
-                            <div class="main-img position-relative">
-                                <img :src="images[currentIndex].image" :alt="images[currentIndex].title">
+                            <div class="main-img position-relative" v-for="(image, index) in images" :class="(index == currentIndex) ? 'active' : '' ">
+                                <img :src="image.image" :alt="image.title">
                                 <div class="text-box position-absolute">
-                                    <h2 class="text-white text-end">{{ images[currentIndex].title }}</h2>
-                                    <p class="text-white text-end">{{ images[currentIndex].text }}</p>
+                                    <h2 class="text-white text-end">{{ image.title }}</h2>
+                                    <p class="text-white text-end">{{ image.text }}</p>
                                 </div>
                             </div>
                         </div>
