@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="col-12 p-5">
-                    <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel">
+                    <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel" @mouseover="stopSlide()" @mouseleave="autoSlide()">
                         <div class="my-carousel-images">
                             <div class="main-img position-relative" v-for="(image, index) in images" :class="(index == currentIndex) ? 'active' : '' ">
                                 <img :src="image.image" :alt="image.title">
@@ -50,7 +50,8 @@
                                 <span class="my-prev-hook"></span>
                             </div>
 
-                            <div class="img-wrapper d-flex flex-row" v-for="(thumbnail, index) in images" :class="(index == currentIndex) ? 'active' : '' ">
+                            <div class="img-wrapper d-flex flex-row" v-for="(thumbnail, index) in images" 
+                            :class="(index == currentIndex) ? 'active' : '' " @click="changeImage(index)">
                                 <img class="img-fluid" :src="thumbnail.image" :alt="`Thumbnail of ${thumbnail.title}`">
                             </div>
 
