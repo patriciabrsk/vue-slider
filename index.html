@@ -37,7 +37,7 @@
                     <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel">
                         <div class="my-carousel-images">
                             <div class="main-img position-relative">
-                                <img v-for="(image, index) in images" :src="image.image" :alt="images.title">
+                                <img v-for="(image, index) in images" :src="image.image" :alt="image.title">
                                 <div class="text-box position-absolute">
                                     <h2 class="text-white text-end">{{ images.title }}</h2>
                                     <p class="text-white text-end">{{ images.text }}</p>
@@ -51,7 +51,7 @@
                             </div>
 
                             <div class="img-wrapper d-flex flex-row" v-for="thumbnail in images">
-                                <img class="img-fluid" :src="{{ thumbnail.image }}" :alt="`${thumbnail.image} picture`">
+                                <img class="img-fluid" :src="thumbnail.image" :alt="`${thumbnail.image} picture`">
                             </div>
 
                             <!-- next -->
