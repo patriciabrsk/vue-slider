@@ -48,6 +48,22 @@ const app = new Vue(
                     text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,'
                 }
             ]
+        },
+        methods: {
+            prevImage() {
+                if (this.currentIndex == 0) {
+                    this.currentIndex = this.images.length - 1;
+                } else {
+                    this.currentIndex--;
+                }
+            },
+            nextImage() {
+                if (this.currentIndex == this.images.length - 1) {
+                        this.currentIndex = 0;
+                } else {
+                    this.currentIndex++;
+                }
+            }
         }
     }
 );

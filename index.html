@@ -20,11 +20,11 @@
     <!-- Custom style -->
     <link rel="stylesheet" href="css/style.css">
 
-    <title>JS Array Carousel with Objects</title>
+    <title>Vue JS Slider</title>
 
 </head>
 <body>
-    <main>
+    <main id="app">
         <div class="container-fluid p-5">
             <div class="row text-center">
                 <div class="col-12 p-3" id="my-before-carousel">
@@ -37,25 +37,25 @@
                     <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel">
                         <div class="my-carousel-images">
                             <div class="main-img position-relative">
-                                <img v-for="(image, index) in images" :src="image.image" :alt="image.title">
+                                <img :src="images[currentIndex].image" :alt="images[currentIndex].title">
                                 <div class="text-box position-absolute">
-                                    <h2 class="text-white text-end">{{ images.title }}</h2>
-                                    <p class="text-white text-end">{{ images.text }}</p>
+                                    <h2 class="text-white text-end">{{ images[currentIndex].title }}</h2>
+                                    <p class="text-white text-end">{{ images[currentIndex].text }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="my-thumbnails d-flex position-relative">
                             <!-- prev -->
-                            <div class="my-previous position-absolute">
+                            <div class="my-previous position-absolute" @click="prevImage()">
                                 <span class="my-prev-hook"></span>
                             </div>
 
-                            <div class="img-wrapper d-flex flex-row" v-for="thumbnail in images">
-                                <img class="img-fluid" :src="thumbnail.image" :alt="`${thumbnail.image} picture`">
+                            <div class="img-wrapper d-flex flex-row" v-for="(thumbnail, index) in images" :class="(index == currentIndex) ? 'active' : '' ">
+                                <img class="img-fluid" :src="thumbnail.image" :alt="`Thumbnail of ${thumbnail.title}`">
                             </div>
 
                             <!-- next -->
-                            <div class="my-next position-absolute">
+                            <div class="my-next position-absolute" @click="nextImage()">
                                 <span class="my-next-hook"></span>
                             </div>
                         </div>
