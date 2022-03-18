@@ -16,6 +16,7 @@ const app = new Vue(
         data: {
             currentIndex: 0,
             hasAutoSlide: null,
+            isForward: true,
             images: [
                 {
                     image: 'img/01.jpg',
